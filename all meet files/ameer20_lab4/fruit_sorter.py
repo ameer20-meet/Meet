@@ -1,0 +1,17 @@
+import turtle # python needs this to use all the turtle functions
+turtle.shape('classic') # changes the shape to a square
+t = turtle.clone()
+t.shape('circle')
+turtle.color('green')
+turtle.pensize(5)
+turtle.forward(75)
+turtle.bgcolor('purple')
+turtle.color('blue')
+turtle.left(90)
+turtle.forward (100)
+t.color('yellow')
+t.left(90)
+t.forward(100)
+t.left(90)
+t.forward(75)
+turtle.mainloop()
