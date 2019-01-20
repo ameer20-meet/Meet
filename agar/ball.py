@@ -1,4 +1,5 @@
-from turte import
+from turtle import *
+import turtle
 class Ball(Turtle):
     def __init__(self,x,y,dx,dy,r,color):
         Turtle.__init__(self)
@@ -10,15 +11,16 @@ class Ball(Turtle):
         self.shape("circle")
         self.shapesize(r/10)
         self.color(color)
+        self.x = x
+        self.y = y
     def move(self,screen_width,screen_height):
-        Current_x = GetX()
-        new_x = Current_x + self.dx
-        new_y = Current_y + self.dy
+        new_x = self.x + self.dx
+        new_y = self.x + self.dy
         #7dood el tab m3 el borders
-        right_side_ball = new_x + r
-        left_side_ball = new_x - r
-        top_side_ball = new_y + r
-        bottom_side_ball = new_y-r
+        right_side_ball = new_x + self.r
+        left_side_ball = new_x - self.r
+        top_side_ball = new_y + self.r
+        bottom_side_ball = new_y-self.r
         #t7rk ll position el jdeed
         self.goto(new_x,new_y)
         self.x = new_x
@@ -28,7 +30,7 @@ class Ball(Turtle):
             self.dx = -self.dx
         elif (right_side_ball >= screen_width):
             self.dx = -self.dx
-        elif(top_side_ball >= screen_height)
+        elif(top_side_ball >= screen_height):
             self.dy = -self.dy
         elif (bottom_side_ball <= -(screen_height)):
             self.dy = -self.dy
@@ -43,9 +45,11 @@ class Ball(Turtle):
         self.shapesize(r/10)
         self.color(color)
 
-    def GetX(self):
-        return self.x
-    def GetY(self):
-        return self.y
-    
+    def Getradius(self):
+        return self.r
+
+screen_width = turtle.getcanvas().winfo_height()/2
+screen_height = turtle.getcanvas().winfo_height()/2
+my_ball=Ball(3,3,4,5,5,"yellow")
+my_ball.move(screen_width,screen_height)
     
