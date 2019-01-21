@@ -15,7 +15,7 @@ class Ball(Turtle):
         self.y = y
     def move(self,screen_width,screen_height):
         new_x = self.x + self.dx
-        new_y = self.x + self.dy
+        new_y = self.y + self.dy
         #7dood el tab m3 el borders
         right_side_ball = new_x + self.r
         left_side_ball = new_x - self.r
@@ -48,8 +48,3 @@ class Ball(Turtle):
     def Getradius(self):
         return self.r
 
-screen_width = turtle.getcanvas().winfo_height()/2
-screen_height = turtle.getcanvas().winfo_height()/2
-my_ball=Ball(3,3,4,5,5,"yellow")
-my_ball.move(screen_width,screen_height)
-    
